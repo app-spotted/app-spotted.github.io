@@ -188,4 +188,12 @@ footer {
     -ms-flex-direction: column;
     flex-direction: column;
   }
+
+  h1{
+    font-size: large;
+  }
+
+  h2{
+    font-size: large;
+  }
 }
