@@ -14,22 +14,17 @@
   <script src="./script/post.js"></script>
   <!-- Social media preview -->
   <!-- ... other tags like title, link, charset, viewport -->
-  <meta property="og:title" content="See this post - Spotted App" />
-  <meta
-    property="og:description"
-    content="There is a post for you! Download Spotted App"
-  />
   <meta name="twitter:site" content="@spotted" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:creator" content="@spotted" />
 </head>
-<body onload="updateMeta()">
+<body onload="setPostImage()">
 
 
   <main>
     <h1>Download the App</h1>
 
-    <img id="postImage" alt="Post image">
+    <img id="postImage" alt="Post image" height="300px" width="600px" style="object-fit: contain;">
   </main>
 </body>
 </html>

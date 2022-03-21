@@ -1,3 +1,5 @@
+updateMeta()
+
 function getPostId(){
     url = document.URL.split('#');
 
@@ -15,9 +17,18 @@ function updateMeta(){
     meta.setAttribute('property',"og:image");
     meta.content = "/img/"+ getPostId() + ".png";
     document.getElementsByTagName('head')[0].appendChild(meta);
-    setPostImage(document.getElementById('postImage'));
+
+    var meta = document.createElement('meta');
+    meta.setAttribute('property',"og:title");
+    meta.content = "See this post - Spotted";
+    document.getElementsByTagName('head')[0].appendChild(meta);
+
+    var meta = document.createElement('meta');
+    meta.setAttribute('property',"og:description");
+    meta.content = "There is a post for you! Download Spotted App";
+    document.getElementsByTagName('head')[0].appendChild(meta);
 }
 
 function setPostImage(element){
-    element.src = "/img/"+ getPostId() + ".png";
+    document.getElementById('postImage').src = "/img/"+ getPostId() + ".png";
 }
