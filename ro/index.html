@@ -1,68 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- Base style -->
-    <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon" />
-    <title>Spotted App</title>
-    <link rel="stylesheet" href="/style/style.css" />
-    <link rel="stylesheet" href="/style/navStyle.css" />
-    <script src="/script/scriptNav.js" defer></script>
-    <!-- Social media preview -->
-    <!-- ... other tags like title, link, charset, viewport -->
-    <meta property="og:title" content="Spotted App" />
-    <meta
-      property="og:description"
-      content="Găsiți oameni pe care i-ați văzut o singură dată prin intermediul comunității"
-    />
-    <meta property="og:image" content="/img/previewLogo.png" />
-    <meta name="twitter:site" content="@spotted" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:creator" content="@spotted" />
-  </head>
-  <body>
-    <!-- Nav Bar -->
-    <div id="navigationContainer">
-        <button
-          class="toggle"
-          id="toggle"
-          aria-controls="navigation"
-          aria-expanded="false"
-        ></button>
-        <nav>
-          <ul class="navigation flex" id="navigation" data-visible="false">
-            <li class="navIcon">
-              <img src="/img/logo.png" alt="Logo example" aria-hidden="true" />
-            </li>
-            <li class="nav-elem" id="spotted-nav">
-              <a href="/ro/" aria-hidden="true">Spotted</a>
-            </li>
-            <li class="activeNav nav-elem">
-              <a href="/ro/" aria-hidden="true">Acasă</a>
-            </li>
-            <li class="notActiveNav nav-elem">
-              <a href="#" aria-hidden="true">Descărcați</a>
-            </li>
-            <li class="notActiveNav nav-elem">
-              <a href="/ro/privacy/" aria-hidden="true">Confidențialitate</a>
-            </li>
-            <li class="notActiveNav nav-elem">
-              <a href="/ro/terms/" aria-hidden="true">Termeni</a>
-            </li>
-            <!-- <button id="nav-button" aria-hidden="true">Premium<img src="img/btnLogo.png" alt="Balck crown embedded in the button"></button> -->
-          </ul>
-        </nav>
-        <div id="navHidden">
-          <img src="/img/logo.png" alt="Logo example" aria-hidden="true" />
-          <p>Spotted</p>
+    <head prefix="og: https://ogp.me/ns#">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <link rel="stylesheet" href="/style/style.css">
+        <link rel="stylesheet" href="/style/navStyle.css">
+        <script src="/script/scriptPhone.js" defer></script>
+        <script src="/script/scriptNav.js" defer></script>
+        <link rel="shortcut icon" type="image/x-icon" href="/img/logo.png">
+        <title>Spotted App</title>
+        <!-- Social media preview -->
+        <!-- ... other tags like title, link, charset, viewport -->
+        <meta property="og:title" content="Spotted App">
+        <meta property="og:description" content="Găsiți oameni pe care i-ați văzut o singură dată prin intermediul comunității">
+        <meta property="og:image" content="/img/previewLogo.png">
+        <meta name="twitter:site" content="@spotted">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:creator" content="@spotted">
+    </head>
+    <body>
+        <!-- Nav Bar -->
+        <div id="navigationContainer">
+            <button
+                class="toggle"
+                id="toggle"
+                aria-controls="navigation"
+                aria-expanded="false"
+            ></button>
+            <nav>
+                <ul class="navigation flex" id="navigation" data-visible="false">
+                    <li class="navIcon">
+                        <img src="/img/logo.png" alt="Logo example" aria-hidden="true">
+                    </li>
+                    <li class="activeNav nav-elem">
+                        <a href="/ro/" aria-hidden="true">Acasă</a>
+                    </li>
+                    <li class="notActiveNav nav-elem">
+                        <a href="/ro/privacy" aria-hidden="true">Confidențialitate</a>
+                    </li>
+                    <li class="notActiveNav nav-elem">
+                        <a href="#" aria-hidden="true">Descărcați</a>
+                    </li>
+                    <li class="notActiveNav nav-elem">
+                        <a href="/ro/terms" aria-hidden="true">Termeni</a>
+                    </li>
+                    <button id="navPremium" aria-hidden="true">
+                        Premium
+                        <img src="/img/btnLogo.svg" alt="Balck crown embedded in the button">
+                    </button>
+                </ul>
+            </nav>
+            <div id="navHidden">
+                <img src="/img/logo.png" alt="Logo example" aria-hidden="true">
+            </div>
         </div>
-    </div>
-
-    <main>
-        <h1>Acasă - WIP</h1>
-    </main>
-  </body>
+        <main>
+            <div class="mainContent">
+                <div class="titleSpotted">
+                    <p id="spotted">Spotted</p>
+                    <div class="phoneAnimation">
+                        <div class="phone" id="phoneContainer">
+                            <video
+                                class="animation"
+                                autoplay
+                                loop
+                                muted
+                                autobuffer
+                                playsinline
+                                id="video"
+                            >
+                                <source src="/vid/IphoneVideo.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <div class="trovaSection" id="trova">
+                    <h1>Găsiți</h1>
+                    <div class="imgContainer">
+                        <div class="imgWithDescription">
+                            <img src="/img/blob-1.png" alt="Spotted app: image of two people having fun">
+                            <h3>Noi prieteni</h3>
+                        </div>
+                        <div class="imgWithDescription">
+                            <img src="/img/blob-2.png" alt="Spotted app: image of people around a camp fire">
+                            <h3>Un partener de aventură</h3>
+                        </div>
+                        <div class="imgWithDescription">
+                            <img src="/img/blob-3.png" alt="Spotted app: image of two people holding hands">
+                            <h3>Dragoste la prima vedere</h3>
+                        </div>
+                    </div>
+                    <button class="scarica">Descarcă acum</button>
+                </div>
+            </div>
+        </main>
+        <footer id="footer">
+            <div class="devLink">
+                <h3>Website developed by
+                    <a href="https://www.laxmancozzarin.com/" id="linkDev">Laxman Cozzarin</a>
+                </h3>
+            </div>
+        </footer>
+    </body>
 </html>

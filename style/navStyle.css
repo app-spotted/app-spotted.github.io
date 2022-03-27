@@ -90,10 +90,16 @@ nav {
 
 .activeNav{
     background: linear-gradient(90deg, rgba(181, 77, 199, 1) 0%, rgba(135, 74, 136, 1) 72%);
-    font-weight: 900;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+.activeNav > a{
+    font-size: 1.5rem;
+}
+
+.notactiveNav a {
+    color: rgb(255, 255, 255);
 }
 
 .nav-elem {
@@ -167,7 +173,7 @@ nav {
         top: 0.7rem;
         right: 1rem;
         z-index: 1000;
-        background: url("../img/hamburger.png");
+        background: url("../imgs/hamburger.png");
         background-repeat: no-repeat;
         background-size: 100% 100%;
     }
