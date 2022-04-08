@@ -1,42 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
 
-:root{
+:root {
   --mainPurple: #8436c8;
   --fadePurple: #b967d9;
   --secondPurp: #9f4ece;
   --firstForeignPurp: #ae6fd3;
   --secondForeignPurp: #e8d6f2;
   --textColor: #f8f4fb;
-  --backgroundColor: #1D2532;
+  --backgroundColor: #1d2532;
 }
-
-
-
 
 /* 
   SCROLLBAR
     Formatting of the scrollbar
 */
-::-webkit-scrollbar{
-  width: 10px
+::-webkit-scrollbar {
+  width: 10px;
 }
-::-webkit-scrollbar-track{
+::-webkit-scrollbar-track {
   border-radius: 5px;
-  background: var(--backgroundColor)
+  background: var(--backgroundColor);
 }
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   border-radius: 5px;
   background: var(--mainPurple);
 }
-
-
-
 
 /* 
   BODY AND HTML
     Formatting of the body and HTML tag
 */
-body,html{
+body,
+html {
   margin: 0;
   padding: 0;
 }
@@ -50,25 +45,22 @@ body {
   color: var(--textColor);
 }
 h1,
-h2{
+h2 {
   line-height: 0;
 }
 h1 {
   color: var(--mainPurple);
   font-size: 4rem;
 }
-h2{
+h2 {
   font-size: 1.9rem;
 }
-
-
-
 
 /* 
   TITLE
     Formatting for the title SPOTTED and the video
 */
-.titleSpotted{
+.titleSpotted {
   width: 100%;
   font-size: 30.1vw;
   display: inline;
@@ -98,9 +90,6 @@ h2{
   object-fit: cover;
 }
 
-
-
-
 /* 
   TROVA SECTION
     Formatting for the "Trova" section (with the 3 imgs)
@@ -113,7 +102,7 @@ h2{
   opacity: 0;
   /* display: none; */
 }
-.trovaSection > h1{
+.trovaSection > h1 {
   margin-bottom: 100px;
 }
 .imgWithDescription {
@@ -135,7 +124,7 @@ h2{
   display: -webkit-flex;
   flex-direction: row;
 }
-.scarica{
+.scarica {
   width: 60%;
   height: 100px;
   font-size: 2rem;
@@ -146,9 +135,6 @@ h2{
   border: none;
   margin: 100px 0 100px 0;
 }
-
-
-
 
 /* 
   TEXT CONTAINER
@@ -161,20 +147,16 @@ h2{
   min-width: 350px;
   margin: auto;
   margin-top: 100px;
-  
 }
-.textContainer > h1{
+.textContainer > h1 {
   text-align: center;
 }
-.textContainer  a{
+.textContainer a {
   color: var(--mainPurple);
 }
-.textContainer h2{
+.textContainer h2 {
   font-style: italic;
 }
-
-
-
 
 /* 
   FOOTER
@@ -188,9 +170,6 @@ footer {
   color: orange;
 }
 
-
-
-
 /* 
   MEDIA QUERY
     Setting the formatting based on the screen
@@ -202,30 +181,49 @@ footer {
   h1 {
     line-height: 60px;
   }
-  h2{
+  h2 {
     line-height: 40px;
   }
   .textContainer {
     line-height: normal;
   }
 
-
-
   #video {
     width: 50%;
     border-radius: 7vw;
   }
-
-
 
   .imgContainer {
     display: flex;
     display: -webkit-flex;
     flex-direction: column;
   }
-  .imgWithDescription>img {
+  .imgWithDescription > img {
     flex-grow: 1;
     -ms-flex-direction: column;
     flex-direction: column;
   }
+}
+
+.purple-gradient-text {
+  color: rgb(181, 77, 199);
+  color: -moz-linear-gradient(
+    90deg,
+    rgba(181, 77, 199, 1) 0%,
+    rgba(135, 74, 136, 1) 72%
+  );
+  color: -webkit-linear-gradient(
+    90deg,
+    rgba(181, 77, 199, 1) 0%,
+    rgba(135, 74, 136, 1) 72%
+  );
+  color: linear-gradient(
+    90deg,
+    rgba(181, 77, 199, 1) 0%,
+    rgba(135, 74, 136, 1) 72%
+  );
+}
+
+.white-text{
+  color: var(--textColor);
 }

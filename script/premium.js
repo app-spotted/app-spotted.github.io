@@ -1,0 +1,114 @@
+getParameter = (key) => {
+  // Address of the current window
+  address = window.location.search;
+
+  // Returns a URLSearchParams object instance
+  parameterList = new URLSearchParams(address);
+
+  // Returning the respected value associated
+  // with the provided key
+  return parameterList.get(key);
+};
+
+// Fetch price data.
+const pricesDiv = document.querySelector("#price-list");
+const customerId = getParameter("customerId");
+
+fetch("http://192.168.78.189:5000/config")
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+    pricesDiv.innerHTML = "";
+    if (!data) {
+      pricesDiv.innerHTML = `
+        <h3>No prices found</h3>
+      `;
+    }
+
+    data.response.forEach((prod) => {
+      prod.prices.forEach((price) => {
+        pricesDiv.innerHTML += `
+        <div id="${price.id}" class="package" ${
+          customerId
+            ? `onclick="createSubscription(\'${price.id}\')" ontouchstart="createSubscription(\'${price.id}\')"`
+            : ""
+        }>
+          <div class="name">${prod.name}</div>
+          <div class="pricing">${price.unit_amount / 100} / ${
+          price.recurringInterval
+        }</div>
+          <hr>
+          <p>${prod.description}</p>
+        </div>`;
+      });
+    });
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });
+
+const createSubscription = (priceId) => {
+  return fetch("http://localhost:5000/create-subscription", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      priceId: priceId,
+      customer: customerId,
+    }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      window.sessionStorage.setItem("subscriptionId", data.subscriptionId);
+      window.sessionStorage.setItem("clientSecret", data.clientSecret);
+      loadPaymentForm();
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+};
+
+const loadPaymentForm = () => {
+  const paymentDiv = document.querySelector("#payment-div");
+  paymentDiv.style.display = "block";
+  let stripe = Stripe(
+    "pk_test_51KgAMTAhya2ryDXno4s83rhVITSX95gBV7KRs9TZ0UYqvPHV8YmII9mhfBd5YmGd6ma0xmrohA5a5EXtB5oFFxlz00spGq7Noj"
+  );
+
+  const options = {
+    clientSecret: window.sessionStorage.getItem("clientSecret"),
+
+    fonts: [{
+      family: 'Baloo 2',
+      src: 'url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap")',
+      weight: '500',
+    }],
+    // Fully customizable with appearance API.
+    appearance: {
+      theme: "night",
+      variables: {
+        colorPrimary: "#8436c8",
+        colorBackground: "#1d2532",
+        colorText: "#f8f4fb",
+        colorDanger: "#df1b41",
+        spacingUnit: "2px",
+        borderRadius: "4px",
+        // See all possible variables below
+      },
+    },
+  };
+
+  // Set up Stripe.js and Elements to use in checkout form, passing the client secret obtained in step 5
+  const elements = stripe.elements(options);
+
+  // Create and mount the Payment Element
+  const paymentElement = elements.create("payment");
+  paymentElement.mount("#payment-element");
+  paymentElement.on('ready', function(event) {
+    document.querySelector("#formLoading").style.display = 'none';
+    document.querySelector("#payment-element").style.display = 'block';
+    document.querySelector("#payButton").style.display = 'block';
+  });
+};

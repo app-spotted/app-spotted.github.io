@@ -4,17 +4,15 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" type="image/x-icon" href="/img/logo.png">
-        <title>Spotted</title>
-        <!-- Basic Styling -->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <link rel="stylesheet" href="/style/style.css">
-        <link rel="stylesheet" href="/style/premium.css">
-        <!-- Navbar -->
         <link rel="stylesheet" href="/style/navStyle.css">
         <script src="/script/scriptNav.js" defer></script>
-        <!-- Stripe -->
+        <link rel="shortcut icon" type="image/x-icon" href="/img/logo.png">
+        <title>Spotted</title>
+        <!-- Stripe Checkout -->
         <script src="https://js.stripe.com/v3/"></script>
-        <script src="/script/premium.js" defer></script>
         <!-- Social media preview -->
         <!-- ... other tags like title, link, charset, viewport -->
         <meta property="og:title" content="Premium - Spotted App">
@@ -23,9 +21,6 @@
         <meta name="twitter:site" content="@spotted">
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:creator" content="@spotted">
-
-        <!-- Icons -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
         <div id="navigationContainer">
@@ -64,34 +59,8 @@
         </div>
         <main>
             <div class="textContainer">
-                <h1 class="white-text">
-                    Spotted
-                    <span class="purple-gradient-text">Premium</span>
-                </h1>
-                <p>
-                    Questi sono i diversi piani di abbonamento che puoi scegliere per ottenere i vantaggi di
-                    <strong>Spotted Premium</strong>
-                </p>
-                <div  id="price-list" class='wrapper'>
-                    <h3><i class="fa fa-circle-o-notch fa-spin" style="padding: 0 1rem;"></i>Sto caricando i piani di abbonameento...</h3>
-                </div>
-
-                <div id="payment-div"  style="display:none;">
-                    <form id="payment-form">
-                        <h3 id="formLoading"><i class="fa fa-circle-o-notch fa-spin" style="padding: 0 1rem;"></i>Sto caricando il form di pagamento...</h3>
-                        <div id="payment-element" style="display:none;">
-                            
-                          <!-- Elements will create form elements here -->
-                        </div>
-                        <button id="payButton" style="display:none;" class="subscribe-button" type="submit" id="submit">Subscribe</button>
-                        <div id="error-message">
-                          <!-- Display error message to your customers here -->
-                        </div>
-                      </form>
-                </div>
-                <div style="height:50px;"></div>
+                <h1>Success!</h1>
             </div>
-        </div>
-    </main>
-</body>
+        </main>
+    </body>
 </html>

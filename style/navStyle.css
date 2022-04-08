@@ -173,7 +173,7 @@ nav {
         top: 0.7rem;
         right: 1rem;
         z-index: 1000;
-        background: url("../imgs/hamburger.png");
+        background: url("/img/hamburger.png");
         background-repeat: no-repeat;
         background-size: 100% 100%;
     }
