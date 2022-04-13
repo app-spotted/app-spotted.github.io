@@ -9,7 +9,7 @@
   --textColor: #f8f4fb;
   --backgroundColor: #1d2532;
   --neroSecondarioFade: #2b3344;
-  --neroSecondario: #5C616D;
+  --neroSecondario: #5c616d;
 }
 
 .wrapper {
@@ -35,16 +35,15 @@
   background-color: var(--neroSecondarioFade);
   transform: scale(1);
   transition: transform 0.5s ease-in-out;
-  
 }
 
-.wrapper .card{
+.wrapper .card {
   position: absolute;
 }
 
-.wrapper .overlay{
+.wrapper .overlay {
   float: center;
-  margin:auto;
+  margin: auto;
   z-index: 9;
 }
 
@@ -60,22 +59,22 @@
 }
 
 .wrapper hr {
-    background-color: rgb(181, 77, 199);
-    background-color: -moz-linear-gradient(
-      90deg,
-      rgba(181, 77, 199, 1) 0%,
-      rgba(135, 74, 136, 1) 72%
-    );
-    background-color: -webkit-linear-gradient(
-      90deg,
-      rgba(181, 77, 199, 1) 0%,
-      rgba(135, 74, 136, 1) 72%
-    );
-    background-color: linear-gradient(
-      90deg,
-      rgba(181, 77, 199, 1) 0%,
-      rgba(135, 74, 136, 1) 72%
-    );
+  background-color: rgb(181, 77, 199);
+  background-color: -moz-linear-gradient(
+    90deg,
+    rgba(181, 77, 199, 1) 0%,
+    rgba(135, 74, 136, 1) 72%
+  );
+  background-color: -webkit-linear-gradient(
+    90deg,
+    rgba(181, 77, 199, 1) 0%,
+    rgba(135, 74, 136, 1) 72%
+  );
+  background-color: linear-gradient(
+    90deg,
+    rgba(181, 77, 199, 1) 0%,
+    rgba(135, 74, 136, 1) 72%
+  );
   border: none;
   height: 1px;
 }
@@ -107,24 +106,62 @@
   bottom: -20px;
 }
 
-.subscribe-button{
-    border-radius: 7px;
-    border: none;
-    font-family: "Baloo 2";
-    font-weight: 600;
-    font-size: 1.4rem;
-    padding: 0.5rem 1rem;
-    color: var(--textColor);
-    margin-top: 1rem;
-    width: 100%;
+.subscribe-button {
+  border-radius: 7px;
+  border: none;
+  font-family: "Baloo 2";
+  font-weight: 600;
+  font-size: 1.4rem;
+  padding: 0.5rem 1rem;
+  color: var(--textColor);
+  margin-top: 1rem;
+  width: 100%;
 
-    background: rgb(181, 77, 199);
-    background: -moz-linear-gradient(90deg, rgba(181, 77, 199, 1) 0%, rgba(135, 74, 136, 1) 72%);
-    background: -webkit-linear-gradient(90deg, rgba(181, 77, 199, 1) 0%, rgba(135, 74, 136, 1) 72%);
-    background: linear-gradient(90deg, rgba(181, 77, 199, 1) 0%, rgba(135, 74, 136, 1) 72%);
-
+  background: rgb(181, 77, 199);
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(181, 77, 199, 1) 0%,
+    rgba(135, 74, 136, 1) 72%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(181, 77, 199, 1) 0%,
+    rgba(135, 74, 136, 1) 72%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(181, 77, 199, 1) 0%,
+    rgba(135, 74, 136, 1) 72%
+  );
 }
 
-#payment-div{
+#payment-div {
   margin-top: 2rem;
+}
+
+.toast {
+  display: none;
+  text-align: center;
+  border-radius: 7px;
+  border: none;
+  font-family: "Baloo 2";
+  font-weight: 600;
+  font-size: 1.4rem;
+  padding: 0.5rem 1rem;
+  color: var(--textColor);
+  margin-top: 1rem;
+  width: 100%;
+  background-color: #1d2532;
+}
+
+.error-toast{
+  background-color: #f34a4ac9;
+}
+
+.success-toast{
+  background-color: #2c8a38c9;
+}
+
+.neutral-toast{
+  background-color: #2b3344c9;
 }
