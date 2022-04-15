@@ -125,60 +125,28 @@ const loadPaymentForm = () => {
   });
 };
 
-const form = document.getElementById("payment-form");
+const form = document.getElementById('payment-form');
 
-form.addEventListener("submit", async (event) => {
+form.addEventListener('submit', async (event) => {
   event.preventDefault();
 
-  const clientSecret = window.sessionStorage.getItem("clientSecret");
-  const message = document.querySelector("#message");
-  if (!clientSecret) {
-    message.innerText = "Something went wrong.";
-    return;
-  }
-  // Retrieve the PaymentIntent
-  stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
-    const message = document.querySelector("#status-message");
-
-    console.log(paymentIntent.status);
-
-    // Inspect the PaymentIntent `status` to indicate the status of the payment
-    // to your customer.
-    //
-    // Some payment methods will [immediately succeed or fail][0] upon
-    // confirmation, while others will first enter a `processing` state.
-    //
-    // [0]: https://stripe.com/docs/payments/payment-methods#payment-notification
-    switch (paymentIntent.status) {
-      case "succeeded":
-        message.style.display = 'block';
-        message.className = "toast success-toast";
-        message.innerHTML =
-          '<i class="fa fa-circle-o-notch fa-spin" style="padding: 0 1rem;"></i> Successo! Abbiamo ricevuto il tuo pagamento, ora puoi goderti il tuo abbonamento Spotted <span class="purple-gradient-text">Premium</span>';
-        break;
-
-      case "processing":
-        message.style.display = 'block';
-        message.className = "toast neutral-toast";
-        message.innerHTML =
-          '<i class="fa fa-circle-o-notch fa-spin" style="padding: 0 1rem;"></i> Stiamo lavorando il tuo pagamento...';
-        break;
-
-      case "requires_payment_method":
-        message.style.display = 'block';
-        message.className = "toast error-toast";
-        message.innerHTML =
-          '<i class="fa fa-circle-o-notch fa-spin" style="padding: 0 1rem;"></i> Il pagamento non è andato a buon fine, prova con un altro metodo di pagamento.';
-        // Redirect your user back to your payment page to attempt collecting
-        // payment again
-        break;
-
-      default:
-        message.style.display = 'block';
-        message.className = "toast error-toast";
-        message.innerHTML =
-          '<i class="fa fa-circle-o-notch fa-spin" style="padding: 0 1rem;"></i> Qualcosa è andato storto';
-        break;
+  const {error} = await stripe.confirmPayment({
+    //`Elements` instance that was used to create the Payment Element
+    elements,
+    confirmParams: {
+      return_url: "http://localhost:5500/it/premium/success/",
     }
   });
+
+  if (error) {
+    // This point will only be reached if there is an immediate error when
+    // confirming the payment. Show error to your customer (for example, payment
+    // details incomplete)
+    const messageContainer = document.querySelector('#error-message');
+    messageContainer.textContent = error.message;
+  } else {
+    // Your customer will be redirected to your `return_url`. For some payment
+    // methods like iDEAL, your customer will be redirected to an intermediate
+    // site first to authorize the payment, then redirected to the `return_url`.
+  }
 });
