@@ -5,6 +5,8 @@
 </div>
 */
 
+import API_URL from "./apiUrl";
+
 //Function to get parameters
 const getParameter = (key) => {
   // Address of the current window
@@ -43,7 +45,7 @@ const showStripeDasboard = (link) => {
   cardContainer.appendChild(stripeDashboardLink);
 };
 
-fetch("http://localhost:5000/create-customer-portal", {
+fetch(`${API_URL}/create-customer-portal`, {
   method: "POST",
   headers: {
     "Content-Type": "application/json",

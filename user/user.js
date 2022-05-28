@@ -1,3 +1,5 @@
+import API_URL from "../script/apiUrl";
+
 //Function to get parameters
 function getUsername() {
   url = document.URL.split("#");
@@ -10,7 +12,6 @@ function getUsername() {
 
   return postId;
 }
-
 
 /* Geting username parameter */
 const username = getUsername();
@@ -48,15 +49,12 @@ const errorDiv = document.createElement("div");
 errorDiv.className = "profile-error";
 
 const loadProfileInfos = () => {
-
   profileDiv.appendChild(loader);
 
-  let requesrUrl = `https://api.appspotted.com/preview/user/${username}`;
+  let requesrUrl = `${API_URL}/preview/user/${username}`;
   fetch(requesrUrl)
     .then((response) => response.json())
     .then((data) => {
-
-
       console.log(data);
       data = data.msg;
 

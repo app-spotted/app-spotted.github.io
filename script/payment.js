@@ -1,3 +1,5 @@
+import API_URL from "./apiUrl";
+
 // Created by Laxman Cozzarin & Spotted Team
 
 // Script that enables the blur animation on card click
@@ -36,19 +38,20 @@ const loadPage = (pricesDiv) => {
 
   // Adding Loader Icon
   pricesDiv.appendChild(loader);
-  
 
   if (customerId) {
     // Creating Title Element
-    messageText.innerHTML = `Ciao${ (username) ? " "+username : "" }, scegli il tuo abbonamento:`;
-  }else{
-    messageText.innerHTML = `Scarica l'applicazione e registrati per abbonarti.`
+    messageText.innerHTML = `Ciao${
+      username ? " " + username : ""
+    }, scegli il tuo abbonamento:`;
+  } else {
+    messageText.innerHTML = `Scarica l'applicazione e registrati per abbonarti.`;
   }
-  
-  document.querySelector('.PremiumSubText').appendChild(messageText)
-  
+
+  document.querySelector(".PremiumSubText").appendChild(messageText);
+
   // Starting to get plans from API
-  fetch("http://localhost:5000/config")
+  fetch(`${API_URL}/config`)
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
@@ -122,7 +125,7 @@ const addBlurFromId = (id) => {
 };
 
 const createCheckoutSession = (priceId) => {
-  return fetch("http://localhost:5000/create-checkout-session", {
+  return fetch(`${API_URL}/create-checkout-session`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
