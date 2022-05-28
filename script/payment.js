@@ -1,4 +1,4 @@
-import API_URL from "./apiUrl";
+import API_URL from "/script/apiUrl.js";
 
 // Created by Laxman Cozzarin & Spotted Team
 
@@ -9,10 +9,10 @@ import API_URL from "./apiUrl";
 //Function to get parameters
 const getParameter = (key) => {
   // Address of the current window
-  address = window.location.search;
+  const address = window.location.search;
 
   // Returns a URLSearchParams object instance
-  parameterList = new URLSearchParams(address);
+  const parameterList = new URLSearchParams(address);
   // Returning the respected value associated
   // with the provided key
   return parameterList.get(key);

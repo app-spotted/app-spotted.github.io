@@ -1,27 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    
-    <!-- Base style -->
-    <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon" />
-    <title>Spotted App</title>
-    <!-- Social media preview -->
-    <!-- ... other tags like title, link, charset, viewport -->
-    <meta property="og:title" content="Spotted App" />
-    <meta
-      property="og:description"
-      content="Find people you have only seen once through the community"
-    />
-    <meta property="og:image" content="/img/previewLogo.png" />
-    <meta name="twitter:site" content="@spotted" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:creator" content="@spotted" />
-
-    <script>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Base style -->
+        <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
+        <title>Spotted App</title>
+        <!-- Social media preview -->
+        <!-- ... other tags like title, link, charset, viewport -->
+        <meta property="og:title" content="Spotted App">
+        <meta property="og:description" content="Find people you have only seen once through the community">
+        <meta property="og:image" content="/img/previewLogo.png">
+        <meta name="twitter:site" content="@spotted">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:creator" content="@spotted">
+        <script>
       var supportedLang = ['it'/*,'en','ru'*/]
       var lang = navigator.language || navigator.browserLanguage;
       console.log(lang);
@@ -38,10 +32,9 @@
         window.location.replace('/'+lang+'/');
       }else{
         console.log('not found location');
-        window.location.replace('/en/');
+        window.location.replace('/it/');
       }
-    </script>
-</head>
-<body>
-</body>
+        </script>
+    </head>
+    <body></body>
 </html>
