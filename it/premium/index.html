@@ -1,23 +1,32 @@
+<!-- URL to test with customer http://127.0.0.1:5571/it/premium/index.html?customerId=cus_LNfCMNkHb1lLJ4 -->
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/style/style.css" defer>
-        <link rel="stylesheet" href="/style/navStyle.css" defer>
-        <script src="/script/scriptPhone.js" defer></script>
-        <script src="/script/scriptNav.js" defer></script>
         <link rel="shortcut icon" type="image/x-icon" href="/img/logo.png">
-        <title>Spotted App</title>
+        <title>Premium - Spotted App</title>
+        <!-- Navbar -->
+        <link rel="stylesheet" href="/style/navStyle.css" defer>
+        <link rel="stylesheet" href="/style/style.css" defer>
+        <script src="/script/scriptNav.js" defer></script>
+        <!-- Stripe -->
+        <script src="https://js.stripe.com/v3/"></script>
         <!-- Social media preview -->
         <!-- ... other tags like title, link, charset, viewport -->
-        <meta property="og:title" content="Spotted App">
-        <meta property="og:description" content="Trova persone che hai visto una sola volta grazie alla comunity">
+        <meta property="og:title" content="Premium - Spotted App">
+        <meta property="og:description" content="Prova Spotted Premium e ottieni vantaggi esclusivi">
         <meta property="og:image" content="/img/previewLogo.png">
         <meta name="twitter:site" content="@spotted">
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:creator" content="@spotted">
+        <!-- Main JS -->
+        <script src="/script/payment.js" defer></script>
+        <!-- Icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Specific Styling -->
+        <link rel="stylesheet" href="/style/premium.css">
     </head>
     <body>
         <div id="navigationContainer">
@@ -45,8 +54,7 @@
                         <a href="/it/terms" aria-hidden="true">Termini</a>
                     </li>
                     <a href="/it/premium">
-                        <button id="navPremium" aria-hidden="true">
-                            Premium
+                        <button id="navPremium" aria-hidden="true">Premium
                             <img src="/img/btnLogo.png" alt="Balck crown embedded in the button">
                         </button>
                     </a>
@@ -56,59 +64,16 @@
                 <img src="/img/logo.png" alt="Logo example" aria-hidden="true">
             </div>
         </div>
-        <main id="home">
-            <div class="mainContent">
-                <div class="titleSpotted">
-                    <p id="spotted">Spotted</p>
-                </div>
-                <div class="phoneAnimation" id="phoneContainer">
-                    <div class="phone">
-                        <video
-                            class="animation"
-                            autoplay
-                            loop
-                            muted
-                            autobuffer
-                            playsinline
-                            id="video"
-                            loading="lazy"
-                        >
-                            <source src="/vid/IphoneVideo.mp4" type="video/mp4">
-                        </video>
-                        <div class="downloadButtons flex" id="downloadButtons">
-                            <button class="button appStore" id="appStore"></button>
-                            <button class="button googleStore" id="googleStore"></button>
-                        </div>
-                    </div>
-                    <div class="section valueProposition" id="valueProposition">
-                        <h1 id="uniqueTitle">
-                            Quando lo cerchi ma non sai dov'è, è
-                            <span class="purpleText"> Spotted</span>
-                        </h1>
-                    </div>
-                </div>
-                <div class="section trovaSection" id="trova">
-                    <h1>Trova</h1>
-                    <div class="imgContainer">
-                        <div class="imgWithDescription">
-                            <img src="/img/blob-1.png" alt="Spotted app: image of two people having fun" loading="lazy">
-                            <h3>Nuovi amici</h3>
-                        </div>
-                        <div class="imgWithDescription">
-                            <img src="/img/blob-2.png" alt="Spotted app: image of people around a camp fire" loading="lazy">
-                            <h3>Un compagno di avventure</h3>
-                        </div>
-                        <div class="imgWithDescription">
-                            <img src="/img/blob-3.png" alt="Spotted app: image of two people holding hands" loading="lazy">
-                            <h3>Il tuo colpo di fulmine</h3>
-                        </div>
-                    </div>
-                    <div class="downloadButtons flex" id="scarica">
-                        <button class="button appStore downloadButtons" id="appStoreBottom"></button>
-                        <button class="button googleStore downloadButtons" id="googleStoreBottom"></button>
-                    </div>
-                </div>
+        <main id="premiumMain">
+            <div class="premiumTitle">
+                <h1>Spotted</h1>
+                <h1>Premium</h1>
             </div>
+            <div class="PremiumSubText">
+                <h3>Questi sono i diversi piani di abbonamento che puoi scegliere per ottenere vantaggi di Spotted Premium</h3>
+            </div>
+            <div class="premiumCardsHolder">
+                <!-- Inserire caricamento --></div>
         </main>
         <footer>
             <div class="oloLogo">
@@ -118,8 +83,7 @@
                 <div class="credits">
                     <div class="footerCreditsText">
                         <h3>Website designed by Spotted</h3>
-                        <h3>
-                            developed by
+                        <h3> developed by
                             <a href="laxmancozzarin.com">Laxman Cozzarin</a>
                         </h3>
                     </div>

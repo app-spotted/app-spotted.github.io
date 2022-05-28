@@ -1,0 +1,41 @@
+:root{
+    --mainPurple: #8436c8;
+    --fadePurple: #b967d9;
+    --secondPurp: #9f4ece;
+    --firstForeignPurp: #ae6fd3;
+    --secondForeignPurp: #e8d6f2;
+    --textColor: #f8f4fb;
+    --backgroundColor: #1D2532;
+    --cardColor: #313946;
+  }
+
+.profile-container{
+    margin: 5rem auto;
+    background-color: var(--cardColor);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    padding: 1rem 2rem;
+    align-self: center;
+}
+
+.profile-image{
+    height: 8rem;
+    width: 8rem;
+    border-radius: 100%;
+    border: 2px solid var(--textColor);
+}
+
+.profile-info{
+    display: flexbox;
+    flex-direction: column;
+    margin-left: 2rem;
+}
+
+h3, h2{
+    display: flex;
+}

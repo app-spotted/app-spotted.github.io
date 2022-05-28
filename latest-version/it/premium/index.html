@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head prefix="og: https://ogp.me/ns#">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/x-icon" href="/img/logo.png">
+        <title>Spotted</title>
+        <!-- Basic Styling -->
+        <link rel="stylesheet" href="/style/style.css">
+        <link rel="stylesheet" href="/style/premium.css">
+        <!-- Navbar -->
+        <link rel="stylesheet" href="/style/navStyle.css">
+        <script src="/script/scriptNav.js" defer></script>
+        <!-- Stripe -->
+        <script src="https://js.stripe.com/v3/"></script>
+        <script src="/script/premium.js" defer></script>
+        <!-- Social media preview -->
+        <!-- ... other tags like title, link, charset, viewport -->
+        <meta property="og:title" content="Premium - Spotted App">
+        <meta property="og:description" content="Prova Spotted Premium e ottieni vantaggi esclusivi">
+        <meta property="og:image" content="/img/previewLogo.png">
+        <meta name="twitter:site" content="@spotted">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:creator" content="@spotted">
+        <!-- Icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div id="navigationContainer">
+            <button
+                class="toggle"
+                id="toggle"
+                aria-controls="navigation"
+                aria-expanded="false"
+            ></button>
+            <nav>
+                <ul class="navigation flex" id="navigation" data-visible="false">
+                    <li class="navIcon">
+                        <img src="/img/logo.png" alt="Logo example" aria-hidden="true">
+                    </li>
+                    <li class="activeNav nav-elem">
+                        <a href="/it/index.html" aria-hidden="true">Home</a>
+                    </li>
+                    <li class="notActiveNav nav-elem">
+                        <a href="/it/privacy" aria-hidden="true">Privacy</a>
+                    </li>
+                    <li class="notActiveNav nav-elem">
+                        <a href="/it/scarica" aria-hidden="true">Scarica</a>
+                    </li>
+                    <li class="notActiveNav nav-elem">
+                        <a href="/it/terms" aria-hidden="true">Termini</a>
+                    </li>
+                    <button id="navPremium" aria-hidden="true">
+                        Premium
+                        <img src="/img/btnLogo.svg" alt="Balck crown embedded in the button">
+                    </button>
+                </ul>
+            </nav>
+            <div id="navHidden">
+                <img src="/img/logo.png" alt="Logo example" aria-hidden="true">
+            </div>
+        </div>
+        <main>
+            <div class="textContainer">
+                <h1 class="white-text">
+                    Spotted
+                    <span class="purple-gradient-text">Premium</span>
+                </h1>
+                <p>
+                    Questi sono i diversi piani di abbonamento che puoi scegliere per ottenere i vantaggi di
+                    <strong>Spotted Premium</strong>
+                </p>
+                <div id="price-list" class="wrapper">
+                    <h3 id="plan-loader">
+                        <i class="fa fa-circle-o-notch fa-spin" style="padding: 0 1rem;"></i>Sto caricando i piani di abbonameento...
+                    </h3>
+                    <div id="load-error" class="toast error-toast">&#128542; C'è stato un problema durante il caricamento dei piani, riprova più tardi!</div>
+                </div>
+                <div id="payment-div" style="display:none;">
+                    <form id="payment-form">
+                        <h3 id="formLoading">
+                            <i class="fa fa-circle-o-notch fa-spin" style="padding: 0 1rem;"></i>Sto caricando il form di pagamento...
+                        </h3>
+                        <div id="payment-element" style="display:none;">
+                            <!-- Elements will create form elements here --></div>
+                        <button
+                            id="payButton"
+                            style="display:none;"
+                            class="subscribe-button"
+                            type="submit"
+                            id="submit"
+                        >Subscribe</button>
+                        <div id="status-message" class="toast">
+                            <!-- Display error message to your customers here --></div>
+                    </form>
+                </div>
+                <div style="height:50px;"></div>
+            </div>
+        </div>
+        
+    </main>
+</body>
+</html>

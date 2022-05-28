@@ -22,9 +22,13 @@
     <meta name="twitter:creator" content="@spotted" />
 
     <script>
-      var supportedLang = ['it','en','ru']
+      var supportedLang = ['it'/*,'en','ru'*/]
       var lang = navigator.language || navigator.browserLanguage;
       console.log(lang);
+
+      var url = window.location;
+
+      console.log(url)
 
       lang = lang.split('-')[0];
 

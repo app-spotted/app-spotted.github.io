@@ -35,7 +35,7 @@ nav {
     z-index: 999;
 }
 
-.flex {
+.flexNav {
     display: flex;
     gap: var(--gap, 1rem);
 }
@@ -46,6 +46,7 @@ nav {
 }
 
 #navPremium {
+    top: 15px;
     position: absolute;
     right: 20px;
     width: 100px;
@@ -118,6 +119,7 @@ nav {
 
 
 .toggle {
+    position: fixed;
     display: none;
 }
 
@@ -167,13 +169,13 @@ nav {
     .toggle {
         display: block;
         border: none;
-        position: absolute;
+        position: fixed;
         width: 2rem;
         aspect-ratio: 1;
         top: 0.7rem;
         right: 1rem;
         z-index: 1000;
-        background: url("../imgs/hamburger.png");
+        background: url("../img/hamburger.png");
         background-repeat: no-repeat;
         background-size: 100% 100%;
     }
@@ -182,7 +184,7 @@ nav {
         display: none;
     }
     
-    #navPremium{
+    a > #navPremium{
         position: relative;
         right: 0;
     }

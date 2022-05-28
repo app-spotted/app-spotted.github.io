@@ -1,23 +1,30 @@
+<!-- URL to test with customer http://127.0.0.1:5571/it/premium/index.html?customerId=cus_LNfCMNkHb1lLJ4 -->
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/style/style.css" defer>
-        <link rel="stylesheet" href="/style/navStyle.css" defer>
-        <script src="/script/scriptPhone.js" defer></script>
-        <script src="/script/scriptNav.js" defer></script>
         <link rel="shortcut icon" type="image/x-icon" href="/img/logo.png">
-        <title>Spotted App</title>
+        <title>Premium - Spotted App</title>
+        <!-- Basic Styling -->
+        <link rel="stylesheet" href="/style/style.css" defer>
+        <!-- Navbar -->
+        <link rel="stylesheet" href="/style/navStyle.css" defer>
+        <script src="/script/scriptNav.js" defer></script>
+        <script src="/script/success.js" defer></script>
         <!-- Social media preview -->
         <!-- ... other tags like title, link, charset, viewport -->
-        <meta property="og:title" content="Spotted App">
-        <meta property="og:description" content="Trova persone che hai visto una sola volta grazie alla comunity">
+        <meta property="og:title" content="Success - Spotted App">
+        <meta property="og:description" content="Grazie per essere entrato in Spotted Premium">
         <meta property="og:image" content="/img/previewLogo.png">
         <meta name="twitter:site" content="@spotted">
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:creator" content="@spotted">
+        <!-- Icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Specific Styling -->
+        <link rel="stylesheet" href="/style/premium.css">
     </head>
     <body>
         <div id="navigationContainer">
@@ -56,58 +63,29 @@
                 <img src="/img/logo.png" alt="Logo example" aria-hidden="true">
             </div>
         </div>
-        <main id="home">
-            <div class="mainContent">
-                <div class="titleSpotted">
-                    <p id="spotted">Spotted</p>
+        <main id="premiumMain">
+            <div class="premiumTitle">
+                <h1>Benvenuto in Spotted</h1>
+                <h1>Premium</h1>
+            </div>
+            <div class="PremiumSubText">
+                <h3>Ora fai parte dei supporter dell'app e ci aiuti a migliorarla in tutti i suoi aspetti</h3>
+                <h3>Inoltre riceverai il badge</h3>
+                <img src="/img/badge.png" height="35rem" alt="">
+            </div>
+            <div id="cardsHolder" class="premiumCardsHolder">
+                <a href="/" style="color: var(--textColor);">
+                    <div class="card">
+                        <img src="/img/logo.png" height="150rem" alt="">
+                        <h2 id="nome">Apri l'app</h2>
+                    </div>
+                </a>
+                <!--
+                <div class="card">
+                    <img src="/img/stripe.png" height="150rem" alt="">
+                    <h2 id="nome">Stripe Dashboard</h2>
                 </div>
-                <div class="phoneAnimation" id="phoneContainer">
-                    <div class="phone">
-                        <video
-                            class="animation"
-                            autoplay
-                            loop
-                            muted
-                            autobuffer
-                            playsinline
-                            id="video"
-                            loading="lazy"
-                        >
-                            <source src="/vid/IphoneVideo.mp4" type="video/mp4">
-                        </video>
-                        <div class="downloadButtons flex" id="downloadButtons">
-                            <button class="button appStore" id="appStore"></button>
-                            <button class="button googleStore" id="googleStore"></button>
-                        </div>
-                    </div>
-                    <div class="section valueProposition" id="valueProposition">
-                        <h1 id="uniqueTitle">
-                            Quando lo cerchi ma non sai dov'è, è
-                            <span class="purpleText"> Spotted</span>
-                        </h1>
-                    </div>
-                </div>
-                <div class="section trovaSection" id="trova">
-                    <h1>Trova</h1>
-                    <div class="imgContainer">
-                        <div class="imgWithDescription">
-                            <img src="/img/blob-1.png" alt="Spotted app: image of two people having fun" loading="lazy">
-                            <h3>Nuovi amici</h3>
-                        </div>
-                        <div class="imgWithDescription">
-                            <img src="/img/blob-2.png" alt="Spotted app: image of people around a camp fire" loading="lazy">
-                            <h3>Un compagno di avventure</h3>
-                        </div>
-                        <div class="imgWithDescription">
-                            <img src="/img/blob-3.png" alt="Spotted app: image of two people holding hands" loading="lazy">
-                            <h3>Il tuo colpo di fulmine</h3>
-                        </div>
-                    </div>
-                    <div class="downloadButtons flex" id="scarica">
-                        <button class="button appStore downloadButtons" id="appStoreBottom"></button>
-                        <button class="button googleStore downloadButtons" id="googleStoreBottom"></button>
-                    </div>
-                </div>
+            -->
             </div>
         </main>
         <footer>

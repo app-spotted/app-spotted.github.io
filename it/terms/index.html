@@ -1,70 +1,98 @@
 <!DOCTYPE html>
-<html lang="it">
-  <head prefix="og: https://ogp.me/ns#">
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <link rel="stylesheet" href="/style/style.css" />
-    <link rel="stylesheet" href="/style/navStyle.css" />
-    <script src="/script/scriptPhone.js" defer></script>
-    <script src="/script/scriptNav.js" defer></script>
-    <link rel="shortcut icon" type="image/x-icon" href="/img/logo.png" />
-    <!-- Social media preview -->
-    <!-- ... other tags like title, link, charset, viewport -->
-    <meta property="og:title" content="Term of Service - Spotted App" />
-    <meta
-      property="og:description"
-      content="Qua puoi trovare i Termini del servizio di Spotted App"
-    />
-    <meta property="og:image" content="/img/previewLogo.png" />
-    <meta name="twitter:site" content="@spotted" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:creator" content="@spotted" />
-  </head>
-  <body>
-    <div id="navigationContainer">
-      <button
-        class="toggle"
-        id="toggle"
-        aria-controls="navigation"
-        aria-expanded="false"
-      ></button>
-      <nav>
-        <ul class="navigation flex" id="navigation" data-visible="false">
-          <li class="navIcon">
-            <img src="/img/logo.png" alt="Logo example" aria-hidden="true" />
-          </li>
-          <li class="notActiveNav nav-elem">
-            <a href="/it" aria-hidden="true">Home</a>
-          </li>
-          <li class="notActiveNav nav-elem">
-            <a href="/it/privacy" aria-hidden="true">Privacy</a>
-          </li>
-          <li class="notActiveNav nav-elem">
-            <a href="/it/" aria-hidden="true">Scarica</a>
-          </li>
-          <li class="activeNav nav-elem">
-            <a href="/it/terms" aria-hidden="true">Termini</a>
-          </li>
-          <button id="navPremium" aria-hidden="true">
-            Premium<img
-              src="/img/btnLogo.svg"
-              alt="Balck crown embedded in the button"
-            />
-          </button>
-        </ul>
-      </nav>
-      <div id="navHidden">
-        <img src="/img/logo.png" alt="Logo example" aria-hidden="true" />
-      </div>
-    </div>
-
-    <main>
-      <div class="textContainer">
-        <h1>Terms - WIP</h1>
-      </div>
-    </main>
-  </body>
-</html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/x-icon" href="/img/logo.png">
+        <title>Term of Service - Spotted App</title>
+        <!-- Basic Styling -->
+        <link rel="stylesheet" href="/style/style.css">
+        <!-- NavBar -->
+        <link rel="stylesheet" href="/style/navStyle.css">
+        <script src="/script/scriptNav.js" defer></script>
+        <!-- Social media preview -->
+        <!-- ... other tags like title, link, charset, viewport -->
+        <meta property="og:title" content="Term of Service - Spotted App">
+        <meta property="og:description" content="Qua puoi trovare i Termini del servizio di Spotted App">
+        <meta property="og:image" content="/img/previewLogo.png">
+        <meta name="twitter:site" content="@spotted">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:creator" content="@spotted">
+    </head>
+    <body>
+        <div id="navigationContainer">
+            <button
+                class="toggle"
+                id="toggle"
+                aria-controls="navigation"
+                aria-expanded="false"
+            ></button>
+            <nav>
+                <ul class="navigation flex" id="navigation" data-visible="false">
+                    <li class="navIcon">
+                        <img src="/img/logo.png" alt="Logo example" aria-hidden="true">
+                    </li>
+                    <li class="notActiveNav nav-elem">
+                        <a href="/it/" aria-hidden="true">Home</a>
+                    </li>
+                    <li class="notActiveNav nav-elem">
+                        <a href="/it/privacy" aria-hidden="true">Privacy</a>
+                    </li>
+                    <li class="notActiveNav nav-elem">
+                        <a href="/it/index.html#scarica" aria-hidden="true">Scarica</a>
+                    </li>
+                    <li class="activeNav nav-elem">
+                        <a href="/it/terms" aria-hidden="true">Termini</a>
+                    </li>
+                    <a href="/it/premium">
+                        <button id="navPremium" aria-hidden="true">Premium
+                            <img src="/img/btnLogo.png" alt="Balck crown embedded in the button">
+                        </button>
+                    </a>
+                </nav>
+                <div id="navHidden">
+                    <img src="/img/logo.png" alt="Logo example" aria-hidden="true">
+                </div>
+            </div>
+            <main>
+                <div class="textContainer">
+                    <h1>Termini</h1>
+                    <br>
+                    <h2>WIP</h2>
+                    <div>
+                    </main>
+                    <footer>
+                        <div class="oloLogo">
+                            <img src="/img/oloLogo.png" alt="OLO logo">
+                        </div>
+                        <div class="footerContainer">
+                            <div class="credits">
+                                <div class="footerCreditsText">
+                                    <h3>Website designed by Spotted</h3>
+                                    <h3>
+                                        developed by
+                                        <a href="laxmancozzarin.com">Laxman Cozzarin</a>
+                                    </h3>
+                                </div>
+                            </div>
+                            <div class="footerLinks">
+                                <div class="footerLinksText">
+                                    <a href="/it/">Home</a>
+                                    <hr>
+                                    <a href="/it/index.html#scarica">Scarica</a>
+                                    <hr>
+                                    <a href="/it/privacy">Privacy</a>
+                                    <hr>
+                                    <a href="/it/terms">Termini</a>
+                                    <hr>
+                                    <a href="/it/premium">Premium</a>
+                                </div>
+                            </div>
+                            <div class="rights">
+                                <h3>© 2022 Tutti i diritti riservati</h3>
+                            </div>
+                        </div>
+                    </footer>
+                </body>
+            </html>
