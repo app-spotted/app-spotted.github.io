@@ -1,5 +1,3 @@
-updateMeta();
-
 function getPostId() {
   url = document.URL.split("#");
 

@@ -11,38 +11,48 @@ const getParameter = (key) => {
 
   // Returns a URLSearchParams object instance
   parameterList = new URLSearchParams(address);
-
   // Returning the respected value associated
   // with the provided key
   return parameterList.get(key);
 };
 
 // Creating a loader icon to be added to other divs
-const loader = document.createElement('i');
-loader.className = "fa fa-circle-o-notch fa-spin fa-3x"
+const loader = document.createElement("i");
+loader.className = "fa fa-circle-o-notch fa-spin fa-3x";
 
 // Declearing elements
 const pricesDiv = document.querySelector(".premiumCardsHolder");
-pricesDiv.appendChild(loader)
+pricesDiv.appendChild(loader);
 const errorDiv = document.querySelector(".loadingError");
-const paymentForm = document.getElementById("payment-div");
+const messageText = document.createElement("h2");
 const customerId = getParameter("customerId");
+const username = getParameter("username");
 
-const loadPricesCards = (pricesDiv) => {
-
+const loadPage = (pricesDiv) => {
   // Questo metodo ottiene le card dal server e le mostra nella 'pricesDiv'
   // nel caso non riesca ad ottenere i dati dal server mostra 'errorDiv'
 
+  pricesDiv.innerHTML = "";
+
   // Adding Loader Icon
   pricesDiv.appendChild(loader);
+  
 
+  if (customerId) {
+    // Creating Title Element
+    messageText.innerHTML = `Ciao${ (username) ? " "+username : "" }, scegli il tuo abbonamento:`;
+  }else{
+    messageText.innerHTML = `Scarica l'applicazione e registrati per abbonarti.`
+  }
+  
+  document.querySelector('.PremiumSubText').appendChild(messageText)
+  
   // Starting to get plans from API
   fetch("http://localhost:5000/config")
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-      pricesDiv.removeChild(loader)
-      pricesDiv.innerHTML = "";
+      pricesDiv.removeChild(loader);
       if (!data) {
         pricesDiv.innerHTML = `
                 <h3>No prices found</h3>
@@ -61,9 +71,9 @@ const loadPricesCards = (pricesDiv) => {
             <h2 id="nome">${prod.name}</h2>
             <div class="priceButtonWithLines">
                 <hr>
-                <button class="priceButton" id="pricing">${
+                <p class="priceButton" id="pricing">${
                   price.unit_amount / 100
-                } / ${price.recurringInterval}</button>
+                } / ${price.recurringInterval}</p>
                 <hr>
             </div>
             <h3 id="description">${prod.description}</h3>
@@ -77,8 +87,7 @@ const loadPricesCards = (pricesDiv) => {
 };
 
 // Loading cards on the DOM
-document.addEventListener("onload", loadPricesCards(pricesDiv));
-
+document.addEventListener("onload", loadPage(pricesDiv));
 
 // blur animation for the card called from the html onclick (placed on the html card DOM element)
 const paymentAnimation = (event, id) => {
@@ -99,7 +108,7 @@ const paymentAnimation = (event, id) => {
     if (otherCard !== card) otherCard.style.filter = "blur(1rem)";
   });
 
-  card.appendChild(loader)
+  card.appendChild(loader);
 
   createCheckoutSession(id);
 };

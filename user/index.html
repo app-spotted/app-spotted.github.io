@@ -1,29 +1,27 @@
-<!-- URL to test with customer http://127.0.0.1:5571/it/premium/index.html?customerId=cus_LNfCMNkHb1lLJ4 -->
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+    <head prefix="og: https://ogp.me/ns#">
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" type="image/x-icon" href="/img/logo.png">
-        <title>Premium - Spotted App</title>
-        <!-- Basic Styling -->
-        <link rel="stylesheet" href="/style/style.css" defer>
+        <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
+        <title>User - Spotted App</title>
+        <!-- Base style -->
+        <link rel="stylesheet" href="/style/style.css">
         <!-- Navbar -->
-        <link rel="stylesheet" href="/style/navStyle.css" defer>
-        <script src="/script/scriptNav.js" defer></script>
+        <link rel="stylesheet" href="/style/navStyle.css">
+        <script src="/script/scriptNav.js"></script>
+        <script src="./user.js" defer></script>
+        <link rel="stylesheet" href="./style.css">
+        <!-- Icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- Social media preview -->
         <!-- ... other tags like title, link, charset, viewport -->
-        <meta property="og:title" content="Premium - Spotted App">
-        <meta property="og:description" content="Prova Spotted Premium e ottieni vantaggi esclusivi">
-        <meta property="og:image" content="/img/previewLogo.png">
+        <meta property="og:title" content="Follow this user! - Spotted App">
+        <meta property="og:description" content="Download Spotted App">
         <meta name="twitter:site" content="@spotted">
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:creator" content="@spotted">
-        <!-- Specific Styling -->
-        <link rel="stylesheet" href="/style/premium.css">
-        <!-- Icons -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
         <div id="navigationContainer">
@@ -62,28 +60,12 @@
                 <img src="/img/logo.png" alt="Logo example" aria-hidden="true">
             </div>
         </div>
-        <main id="premiumMain">
-            <div class="premiumTitle">
-                <h1>Qualcosa è andato storto :(</h1>
-            </div>
-            <div class="PremiumSubText">
-                <h3>
-                    Ci dispiace che tu non sia riuscito a portare a termine la sottoscrizione all'abbonamento Spotted
-                    <span class="purpleText">Premium</span>
-                </h3>
-                <h3>
-                    Per ricevere assistenza scrivi una mail a
-                    <a class="button" href="mailto:spotted.app.business@gmail.com?subject=Errore nella registrazione a Spotted Premium">spotted.app.business@gmail.com</a>
-                </h3>
-            </div>
-            <div class="premiumCardsHolder">
-                <div class="card">
-                    <a href="/" style="color: var(--textColor);">
-                        <img src="/img/logo.png" height="150rem" alt="">
-                        <h2 id="nome">Apri l'app</h2>
-                    </a>
-                </div>
-            </div>
+        <main>
+          <div class="profile-container" id="content"></div>
+          <div class="cta-container">
+            <h2>Per vedere i dettagli </h2>
+            <button>APRI L'APP</button>
+          </div>
         </main>
         <footer>
             <div class="oloLogo">
