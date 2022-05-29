@@ -1,4 +1,7 @@
-import API_URL from "/script/apiUrl.js";
+import {
+  STRIPE_CONFIG_ENDPOINT,
+  CREATE_CHECKOUT_SESSION_ENDPOINT,
+} from "/script/apiUrl.js";
 
 // Created by Laxman Cozzarin & Spotted Team
 
@@ -30,6 +33,52 @@ const messageText = document.createElement("h2");
 const customerId = getParameter("customerId");
 const username = getParameter("username");
 
+const createCheckoutSession = (priceId) => {
+  return fetch(CREATE_CHECKOUT_SESSION_ENDPOINT, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      priceId: priceId,
+      customerId: customerId,
+    }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      window.location.replace(data.msg.checkoutUrl);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+};
+
+// blur animation for the card called from the html onclick (placed on the html card DOM element)
+const paymentAnimation = (event, id) => {
+  // Stops the event propagation to the other DOM elements (Prevents the main DOM element to recive the click event)
+  event.stopImmediatePropagation();
+
+  const card = document.getElementById(id);
+
+  // In case the first initialisation wasn't succesful
+  const allCards = Array.from(document.getElementsByClassName(card.className));
+
+  // Stops the event propagation to the other DOM elements (Prevents the main DOM element to recive the click event)
+  event.stopImmediatePropagation();
+
+  // All the cards that aren't the clicked card get the blurred effect
+  allCards.forEach((otherCard) => {
+    card.style.filter = "none";
+    if (otherCard !== card) otherCard.style.filter = "blur(1rem)";
+  });
+
+  card.appendChild(loader);
+
+  createCheckoutSession(id);
+};
+
+window.paymentAnimation = paymentAnimation;
+
 const loadPage = (pricesDiv) => {
   // Questo metodo ottiene le card dal server e le mostra nella 'pricesDiv'
   // nel caso non riesca ad ottenere i dati dal server mostra 'errorDiv'
@@ -51,9 +100,10 @@ const loadPage = (pricesDiv) => {
   document.querySelector(".PremiumSubText").appendChild(messageText);
 
   // Starting to get plans from API
-  fetch(`${API_URL}/config`)
+  fetch(STRIPE_CONFIG_ENDPOINT)
     .then((response) => response.json())
     .then((data) => {
+      data = data.msg;
       console.log(data);
       pricesDiv.removeChild(loader);
       if (!data) {
@@ -62,13 +112,13 @@ const loadPage = (pricesDiv) => {
             `;
       }
 
-      data.response.forEach((prod) => {
+      data.forEach((prod) => {
         prod.prices.forEach((price) => {
           pricesDiv.innerHTML += `
             <div class="card" id="${price.id}" 
             ${
               customerId
-                ? `onclick="paymentAnimation(event, \'${price.id}\')"`
+                ? `onClick="paymentAnimation( event, \'${price.id}\')"`
                 : ""
             }>
             <h2 id="nome">${prod.name}</h2>
@@ -91,55 +141,3 @@ const loadPage = (pricesDiv) => {
 
 // Loading cards on the DOM
 document.addEventListener("onload", loadPage(pricesDiv));
-
-// blur animation for the card called from the html onclick (placed on the html card DOM element)
-const paymentAnimation = (event, id) => {
-  // Stops the event propagation to the other DOM elements (Prevents the main DOM element to recive the click event)
-  event.stopImmediatePropagation();
-
-  const card = document.getElementById(id);
-
-  // In case the first initialisation wasn't succesful
-  allCards = Array.from(document.getElementsByClassName(card.className));
-
-  // Stops the event propagation to the other DOM elements (Prevents the main DOM element to recive the click event)
-  event.stopImmediatePropagation();
-
-  // All the cards that aren't the clicked card get the blurred effect
-  allCards.forEach((otherCard) => {
-    card.style.filter = "none";
-    if (otherCard !== card) otherCard.style.filter = "blur(1rem)";
-  });
-
-  card.appendChild(loader);
-
-  createCheckoutSession(id);
-};
-
-const removeBlurFromId = (id) => {
-  document.getElementById(id).style.filter = "none";
-};
-
-const addBlurFromId = (id) => {
-  document.getElementById(id).style.filter = "blur(1rem)";
-};
-
-const createCheckoutSession = (priceId) => {
-  return fetch(`${API_URL}/create-checkout-session`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      priceId: priceId,
-      customerId: customerId,
-    }),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      window.location.replace(data.checkoutUrl);
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
-};

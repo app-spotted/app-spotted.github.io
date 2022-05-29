@@ -5,7 +5,7 @@
 </div>
 */
 
-import API_URL from "./apiUrl.js";
+import { CREATE_CUSTOMER_PORTAL_ENDPOINT } from "./apiUrl.js";
 
 //Function to get parameters
 const getParameter = (key) => {
@@ -38,14 +38,16 @@ title.innerText = "Stripe Dashboard";
 stripeDashboardLink.style = "color: var(--textColor);";
 
 const showStripeDasboard = (link) => {
-  stripeDashboardLink.href = link;
+  if (link) {
+    stripeDashboardLink.href = link;
+  }
   stripeDashboardLink.appendChild(stripeCard);
   stripeCard.appendChild(stripeImg);
   stripeCard.appendChild(title);
   cardContainer.appendChild(stripeDashboardLink);
 };
 
-fetch(`${API_URL}/create-customer-portal`, {
+fetch(CREATE_CUSTOMER_PORTAL_ENDPOINT, {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
