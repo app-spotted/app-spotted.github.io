@@ -40,11 +40,11 @@ stripeDashboardLink.style = "color: var(--textColor);";
 const showStripeDasboard = (link) => {
   if (link) {
     stripeDashboardLink.href = link;
+    stripeDashboardLink.appendChild(stripeCard);
+    stripeCard.appendChild(stripeImg);
+    stripeCard.appendChild(title);
+    cardContainer.appendChild(stripeDashboardLink);
   }
-  stripeDashboardLink.appendChild(stripeCard);
-  stripeCard.appendChild(stripeImg);
-  stripeCard.appendChild(title);
-  cardContainer.appendChild(stripeDashboardLink);
 };
 
 fetch(CREATE_CUSTOMER_PORTAL_ENDPOINT, {
@@ -58,7 +58,7 @@ fetch(CREATE_CUSTOMER_PORTAL_ENDPOINT, {
 })
   .then((response) => response.json())
   .then((data) => {
-    showStripeDasboard(data.portalUrl);
+    showStripeDasboard(data.msg.portalUrl);
   })
   .catch((error) => {
     console.error("Error:", error);
