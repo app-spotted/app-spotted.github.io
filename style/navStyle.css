@@ -1,191 +1,195 @@
-#navHidden>img {
-    position: absolute;
-    left: 0;
-    top: 0;
-    margin: 7px;
-    height: 40px;
+#navHidden > img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 7px;
+  height: 40px;
 }
 
-#navHidden>p {
-    text-align: left;
-    margin-left: 65px;
+#navHidden > p {
+  text-align: left;
+  margin-left: 65px;
 
-    margin-top: 30px;
-    line-height: 0;
-    color: white;
-    font-size: 1.5em;
+  margin-top: 30px;
+  line-height: 0;
+  color: white;
+  font-size: 1.5em;
 }
 
 nav {
-    position: fixed;
-    overflow: hidden;
-    width: 100%;
-    height: 3.5rem;
-    background: transparent;
-    display: flex;
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 3.5rem;
+  background: transparent;
+  display: flex;
 
-    top: 0;
+  top: 0;
 
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 
-    font-size: 1em;
-    font-weight: 400;
+  font-size: 1em;
+  font-weight: 400;
 
-    z-index: 999;
+  z-index: 999;
 }
 
 .flexNav {
-    display: flex;
-    gap: var(--gap, 1rem);
+  display: flex;
+  gap: var(--gap, 1rem);
 }
 
-.navIcon>img {
-    margin-top: 6px;
-    height: 40px;
+.navIcon > img {
+  margin-top: 6px;
+  height: 40px;
 }
 
 #navPremium {
-    top: 15px;
-    position: absolute;
-    right: 20px;
-    width: 100px;
-    border-radius: 7px;
-    border: none;
+  top: 15px;
+  position: absolute;
+  right: 20px;
+  width: 100px;
+  border-radius: 7px;
+  border: none;
 
-    background: rgb(181, 77, 199);
-    background: -moz-linear-gradient(90deg, rgba(181, 77, 199, 1) 0%, rgba(135, 74, 136, 1) 72%);
-    background: -webkit-linear-gradient(90deg, rgba(181, 77, 199, 1) 0%, rgba(135, 74, 136, 1) 72%);
-    background: linear-gradient(90deg, rgba(181, 77, 199, 1) 0%, rgba(135, 74, 136, 1) 72%);
+  background: rgb(181, 77, 199);
+  background: linear-gradient(90deg, #be36c8 0%, #5b36c8 72%);
+  background: -moz-linear-gradient(90deg, #be36c8 0%, #5b36c8 72%);
+  background: -webkit-linear-gradient(90deg, #be36c8 0%, #5b36c8 72%);
+  background: linear-gradient(90deg, #be36c8 0%, #5b36c8 72%);
 
-    font-family: "Baloo 2", cursive;
-    font-size: 1rem;
-    text-align: right;
-    color: white;
+  font-family: "Baloo 2", sans-serif;
+  font-size: 1rem;
+  text-align: right;
+  color: white;
+  cursor: pointer;
 }
 
 #navPremium > img {
-    width: 15px;
-    position: absolute;
-    margin-left: -85px;
-    margin-top: 6px;
+  width: 15px;
+  position: absolute;
+  margin-left: -85px;
+  margin-top: 6px;
 }
 
 .navigation {
-    list-style: none;
-    width: 100%;
-    padding: 10px;
-    margin: 0;
-    z-index: 10;
-    gap: 0.5rem;
-    background-color: rgb(54, 48, 87);
-    align-items: center;
+  list-style: none;
+  width: 100%;
+  padding: 10px;
+  margin: 0;
+  z-index: 10;
+  gap: 0.5rem;
+  background-color: hsla(216, 26%, 11%, 0.99);
+  /*background-color: rgb(54, 48, 87);*/
+  align-items: center;
 }
 
 .nav-elem a {
-    text-decoration: none;
+  text-decoration: none;
 
-    color: rgb(255, 255, 255);
-    padding: 0.40em;
+  color: rgb(255, 255, 255);
+  padding: 0.4em;
 }
 
-.activeNav{
-    background: linear-gradient(90deg, rgba(181, 77, 199, 1) 0%, rgba(135, 74, 136, 1) 72%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.activeNav {
+  border-style: linear-gradient(90deg, #be36c8 0%, #5b36c8 72%);
+  background: -moz-linear-gradient(90deg, #be36c8 0%, #5b36c8 72%);
+  background: -webkit-linear-gradient(90deg, #be36c8 0%, #5b36c8 72%);
+  background: linear-gradient(90deg, #be36c8 0%, #5b36c8 72%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-.activeNav > a{
-    font-size: 1.5rem;
+
+.activeNav a {
+  font-size: 1.2em;
 }
 
 .notactiveNav a {
-    color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
 }
 
 .nav-elem {
-    font-size: 1em;
-    font-weight: bolder;
+  font-size: 1em;
+  /*font-weight: bolder;*/
 
-    cursor: pointer;
+  cursor: pointer;
 
-    text-align: right;
-    vertical-align: middle;
+  text-align: right;
+  vertical-align: middle;
 }
 
 #spotted-nav {
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 
-
 .toggle {
-    position: fixed;
-    display: none;
+  position: fixed;
+  display: none;
 }
 
 @media (max-width: 56em) {
-    #navigationHidden {
-        display: block;
-        z-index: 2000;
-    }
+  #navigationHidden {
+    display: block;
+    z-index: 2000;
+  }
 
-    .navigation {
-        position: fixed;
-        inset: 0 0 0 50%;
+  .navigation {
+    position: fixed;
+    inset: 0 0 0 50%;
 
-        flex-direction: column;
+    flex-direction: column;
 
-        margin-left: 0;
-        align-items: flex-start;
-        padding: min(100vh, 10rem) 2em;
+    margin-left: 0;
+    align-items: flex-start;
+    padding: min(100vh, 10rem) 2em;
 
-        background-color: rgb(54, 48, 87);
+    transform: translateX(100%);
+    transition: 350ms ease-out;
 
-        transform: translateX(100%);
-        transition: 350ms ease-out;
+    width: 100%;
+  }
 
-        width: 100%;
-    }
+  .navTitle {
+    display: block;
+    font-size: 2rem;
+  }
 
-    .navTitle {
-        display: block;
-        font-size: 2rem;
-    }
+  nav {
+    text-align: center;
+    width: 100%;
+  }
 
-    nav {
-        text-align: center;
-        width: 100%;
-    }
+  .navigation {
+    gap: 10%;
+    width: 100%;
+  }
 
-    .navigation {
-        gap: 10%;
-        width: 100%;
-    }
+  .navigation[data-visible="true"] {
+    transform: translateX(0%);
+  }
 
-    .navigation[data-visible="true"] {
-        transform: translateX(0%);
-    }
+  .toggle {
+    display: block;
+    border: none;
+    position: fixed;
+    width: 2rem;
+    aspect-ratio: 1;
+    top: 0.7rem;
+    right: 1rem;
+    z-index: 1000;
+    background: url("../img/hamburger.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
 
-    .toggle {
-        display: block;
-        border: none;
-        position: fixed;
-        width: 2rem;
-        aspect-ratio: 1;
-        top: 0.7rem;
-        right: 1rem;
-        z-index: 1000;
-        background: url("../img/hamburger.png");
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-    }
+  .navIcon > img {
+    display: none;
+  }
 
-    .navIcon>img {
-        display: none;
-    }
-    
-    a > #navPremium{
-        position: relative;
-        right: 0;
-    }
+  a > #navPremium {
+    position: relative;
+    right: 0;
+  }
 }

@@ -40,7 +40,7 @@ function setListener() {
       passive: true,
     });
 
-    vidBackground.style.borderRadius = "4vw";
+    vidBackground.style.borderRadius = "3vw";
     vidBackground.style.width = "25%";
     vidBackground.style.top = "15vh";
 
@@ -53,7 +53,7 @@ function setListener() {
       passive: true,
     });
 
-    vidBackground.style.borderRadius = "7vw";
+    vidBackground.style.borderRadius = "5vw";
     vidBackground.style.width = "50%";
     vidBackground.style.top = "20.5vh";
     downloadBtnContainer.style.marginTop = 100 + "px";

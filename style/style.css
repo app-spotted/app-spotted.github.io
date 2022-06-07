@@ -44,7 +44,7 @@ html {
 body {
   margin: 0;
   text-align: center;
-  font-family: "Baloo 2", cursive;
+  font-family: "Baloo 2", sans-serif;
   user-select: none;
   background-color: var(--backgroundColor);
 
@@ -76,6 +76,7 @@ p {
 }
 main {
   margin-top: 40px;
+  margin-bottom: 200px;
 }
 
 /* 
@@ -137,6 +138,7 @@ main {
   background-position: center;
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 #downloadButtons {
   position: relative;
@@ -182,6 +184,8 @@ h2 {
     Formatting for the "Trova" section (with the 3 imgs)
 */
 .trovaSection {
+  width: 100%;
+
   font-size: 2em;
   color: white;
 
@@ -189,12 +193,14 @@ h2 {
   /* display: none; */
 }
 .imgWithDescription {
+  max-width: 1000px;
   line-height: -100px;
   flex-grow: 1;
   margin: auto;
 }
 .imgWithDescription > img {
   width: 80%;
+  max-width: 300px;
   padding: 20px;
   margin: auto;
 }
@@ -259,6 +265,10 @@ h2 {
   }
 }
 
+#premiumMain {
+  margin: 0 1rem 0 1rem;
+}
+
 .premiumTitle {
   display: flex;
   flex-direction: row;
@@ -316,11 +326,10 @@ h2 {
 
   border-radius: 20px;
   border: none;
-  background: linear-gradient(
-    90deg,
-    rgba(181, 77, 199, 1) 0%,
-    rgba(135, 74, 136, 1) 72%
-  );
+  background: linear-gradient(90deg, #be36c8 0%, #5b36c8 72%);
+  background: -moz-linear-gradient(90deg, #be36c8 0%, #5b36c8 72%);
+  background: -webkit-linear-gradient(90deg, #be36c8 0%, #5b36c8 72%);
+  background: linear-gradient(90deg, #be36c8 0%, #5b36c8 72%);
   color: white;
   padding: 5px 10px;
 }
@@ -390,19 +399,26 @@ form > button {
 /* FOOTER */
 footer {
   width: 100%;
-  position: relative;
-  margin: 5rem auto 0 auto;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--cardColor);
+}
+.footerContent {
+  width: 90%;
+  max-width: 1500px;
+  position: absolute;
+  bottom: 0;
 }
 .oloLogo > img {
+  height: 100%;
   width: 250px;
+  bottom: 0;
 }
 .footerContainer {
-  width: 90%;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 0px;
   display: flex;
+  align-items: center;
   justify-content: space-evenly;
   color: rgb(194, 194, 194);
 }
@@ -492,9 +508,8 @@ footer {
   }
 
   footer {
-    width: 100%;
     position: relative;
-    margin: 200px auto 100px auto;
+    margin: 400px auto 0 auto;
   }
   .footerContainer {
     position: relative;
@@ -509,6 +524,15 @@ footer {
   .rights {
     justify-content: center;
     margin-top: 30px;
+  }
+
+  .social {
+    margin: 0 1rem 0 1rem;
+  }
+
+  #checkEmail {
+    height: 4rem;
+    width: 4rem;
   }
 }
 
@@ -532,6 +556,10 @@ a {
 .social {
   text-align: left !important;
 }
+.social > h2 {
+  margin-top: 0.4em;
+}
+
 #emailForm {
   display: flex;
   flex-direction: column;
@@ -544,12 +572,13 @@ a {
 .checkBoxDiv {
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  align-items: center;
+  gap: 1rem;
 }
 #checkEmail {
   border-radius: 50%;
-  height: 20px;
-  width: 20px;
+  height: 2rem;
+  width: 2rem;
   outline: none;
   cursor: pointer;
 }
@@ -557,6 +586,7 @@ a {
   background-color: var(--mainPurple);
 }
 input[type="submit"] {
+  font-family: "Baloo 2", sans-serif;
   margin: auto;
   padding: 0.5rem 0;
   border-radius: 7px;
