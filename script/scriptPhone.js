@@ -45,8 +45,6 @@ function setListener() {
     vidBackground.style.top = "15vh";
 
     downloadContainerMarginTop(200);
-
-    console.log("scrolling da computer");
   } else {
     window.removeEventListener("scroll", computerScrollingAnimation);
     window.addEventListener("scroll", mobileScrollingAnimation, {
@@ -58,8 +56,6 @@ function setListener() {
     vidBackground.style.top = "20.5vh";
     downloadBtnContainer.style.marginTop = 100 + "px";
     downloadBtnContainer.style.opacity = 1;
-
-    console.log("Scrolling da telefono");
   }
 }
 
@@ -154,7 +150,6 @@ function downloadContainerMarginTop(offset) {
   downloadBtnContainer.style.marginTop = `${
     windowY - vidBackground.offsetHeight + offset
   }px`;
-  console.log(downloadBtnContainer.style.marginTop);
 }
 
 // RETURNS THE PAGEY WITH THE ANGLE (REVERSE FORMULA)

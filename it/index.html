@@ -60,23 +60,8 @@
             <a href="/it/" aria-hidden="true">Home</a>
           </li>
           <li class="notActiveNav nav-elem">
-            <a href="/it/index.html#scarica" aria-hidden="true">Scarica</a>
-          </li>
-          <li class="notActiveNav nav-elem">
             <a href="/it/privacy" aria-hidden="true">Privacy</a>
           </li>
-          <!--<li class="notActiveNav nav-elem">
-            <a href="/it/terms" aria-hidden="true">Termini</a>
-          </li>
-          <a href="/it/premium">
-            <button id="navPremium" aria-hidden="true">
-              Premium
-              <img
-                src="/img/btnLogo.png"
-                alt="Balck crown embedded in the button"
-              />
-            </button>
-          </a>-->
         </ul>
       </nav>
       <div id="navHidden">
@@ -105,12 +90,12 @@
             <div class="downloadButtons flex" id="downloadButtons">
               <h4
                 id="appStore"
-                style="z-index: 1000; display: block; width: 20ch"
+                style="z-index: 100; display: block; width: 20ch"
               >
                 A breve disponibile per le seguenti piattaforme!
               </h4>
-              <a href="#" class="button appStore"> </a>
-              <a href="#" class="button googleStore" id="googleStore"> </a>
+              <a class="button appStore"> </a>
+              <a class="button googleStore" id="googleStore"> </a>
             </div>
           </div>
           <div class="section valueProposition" id="valueProposition">
@@ -132,7 +117,7 @@
           <form id="emailForm" method="POST">
             <label>Email:</label>
             <input
-              type="text"
+              type="email"
               name="email"
               id="email"
               placeholder="example@appspotted.com"
@@ -186,27 +171,29 @@
               <h3>Il tuo colpo di fulmine</h3>
             </div>
           </div>
-          <div class="downloadButtons flex" id="scarica" style="display: none">
-            <a class="button appStore downloadButtons" id="appStoreBottom"></a>
-            <a
-              class="button googleStore downloadButtons"
-              id="googleStoreBottom"
-            ></a>
-          </div>
         </div>
       </div>
     </main>
     <footer>
       <div class="oloLogo">
-        <img src="/img/oloLogo.png" alt="OLO logo" />
+        <a href="https://www.instagram.com/olo.studios" target="_blank">
+          <img src="/img/oloLogo.png" alt="OLO logo" />
+        </a>
       </div>
       <div class="footerContainer">
         <div class="credits">
           <div class="footerCreditsText">
-            <h3>Website designed by Spotted</h3>
+            <h3>
+              Website designed by
+              <a href="https://www.instagram.com/app.spotted/" target="_blank"
+                >Spotted</a
+              >
+            </h3>
             <h3>
               developed by
-              <a href="laxmancozzarin.com">Laxman Cozzarin</a>
+              <a href="https://laxmancozzarin.com" target="_blank"
+                >Laxman Cozzarin</a
+              >
             </h3>
           </div>
         </div>
@@ -214,13 +201,7 @@
           <div class="footerLinksText">
             <a href="/it/">Home</a>
             <hr />
-            <a href="/it/index.html#scarica">Scarica</a>
-            <hr />
             <a href="/it/privacy">Privacy</a>
-            <hr />
-            <a href="/it/terms">Termini</a>
-            <hr />
-            <a href="/it/premium">Premium</a>
           </div>
         </div>
         <div class="rights">
