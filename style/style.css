@@ -396,17 +396,17 @@ form > button {
 /* FOOTER */
 footer {
   width: 100%;
-  padding-top: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--cardColor);
 }
 .footerContent {
-  width: 90%;
+  width: 100%;
   max-width: 1500px;
   position: absolute;
   bottom: 0;
+  padding: 1rem 5rem 0 5rem;
+  background-color: var(--cardColor);
 }
 .oloLogo img {
   height: 100%;
@@ -414,9 +414,6 @@ footer {
   bottom: 0;
 }
 .footerContainer {
-  width: 90%;
-  max-width: 1500px;
-  bottom: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -630,4 +627,31 @@ input[type="submit"] {
 
 .error i {
   color: red;
+}
+
+.cookie-banner {
+  position: fixed;
+  bottom: 40px;
+  left: 10%;
+  right: 10%;
+  width: 80%;
+  padding: 0.8rem 1rem !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--cardColor);
+  border-radius: 5px;
+  z-index: 150;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+.cookie-banner p {
+  margin-inline-start: 0 !important;
+}
+.close {
+  height: 20px;
+  background-color: #777;
+  border: none;
+  color: white;
+  border-radius: 2px;
+  cursor: pointer;
 }

@@ -42,8 +42,24 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <!-- JQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Cookie script -->
+    <script src="/script/coockie.js" defer></script>
   </head>
   <body>
+    <!-- Coockie banner -->
+    <div class="cookie-banner" style="display: none">
+      <p>
+        By using our website, you agree to our
+        <a href="cookie-policy/">cookie policy</a>
+      </p>
+      <button class="close"><i class="fa fa-times"></i></button>
+    </div>
     <div id="navigationContainer">
       <button
         class="toggle"
@@ -127,7 +143,7 @@
               <input type="checkbox" id="checkEmail" name="checkEmail" />
               <lable for="checkEmailLbl"
                 >Accetto di ricevere comunicazioni promozionali ed aggiornamenti
-                relativi a Spetted App.*</lable
+                relativi a Spotted App.*</lable
               >
             </div>
             <h4 class="subTerm">
@@ -175,37 +191,39 @@
       </div>
     </main>
     <footer>
-      <div class="oloLogo">
-        <a href="https://www.instagram.com/olo.studios" target="_blank">
-          <img src="/img/oloLogo.png" alt="OLO logo" />
-        </a>
-      </div>
-      <div class="footerContainer">
-        <div class="credits">
-          <div class="footerCreditsText">
-            <h3>
-              Website designed by
-              <a href="https://www.instagram.com/app.spotted/" target="_blank"
-                >Spotted</a
-              >
-            </h3>
-            <h3>
-              developed by
-              <a href="https://laxmancozzarin.com" target="_blank"
-                >Laxman Cozzarin</a
-              >
-            </h3>
-          </div>
+      <div class="footerContent">
+        <div class="oloLogo">
+          <a href="https://www.instagram.com/olo.studios" target="_blank">
+            <img src="/img/oloLogo.png" alt="OLO logo" />
+          </a>
         </div>
-        <div class="footerLinks">
-          <div class="footerLinksText">
-            <a href="/it/">Home</a>
-            <hr />
-            <a href="/it/privacy">Privacy</a>
+        <div class="footerContainer">
+          <div class="credits">
+            <div class="footerCreditsText">
+              <h3>
+                Website designed by
+                <a href="https://www.instagram.com/app.spotted/" target="_blank"
+                  >Spotted</a
+                >
+              </h3>
+              <h3>
+                developed by
+                <a href="https://laxmancozzarin.com" target="_blank"
+                  >Laxman Cozzarin</a
+                >
+              </h3>
+            </div>
           </div>
-        </div>
-        <div class="rights">
-          <h3>© 2022 Tutti i diritti riservati</h3>
+          <div class="footerLinks">
+            <div class="footerLinksText">
+              <a href="/it/">Home</a>
+              <hr />
+              <a href="/it/privacy">Privacy</a>
+            </div>
+          </div>
+          <div class="rights">
+            <h3>© 2022 Tutti i diritti riservati</h3>
+          </div>
         </div>
       </div>
     </footer>
