@@ -402,10 +402,10 @@ footer {
 }
 .footerContent {
   width: 100%;
-  max-width: 1500px;
   position: absolute;
   bottom: 0;
-  padding: 1rem 5rem 0 5rem;
+  padding-top: 1rem;
+  align-items: center;
   background-color: var(--cardColor);
 }
 .oloLogo img {
@@ -414,9 +414,10 @@ footer {
   bottom: 0;
 }
 .footerContainer {
+  padding: 0 2rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   color: rgb(194, 194, 194);
 }
 
