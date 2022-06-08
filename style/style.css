@@ -437,6 +437,7 @@ footer {
 }
 .footerLinks hr {
   width: 4px;
+  border-style: solid;
 }
 
 .credits {
