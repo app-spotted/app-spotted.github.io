@@ -68,12 +68,10 @@ function setListener() {
 // PHONE ANIMATION: MARGIN TOP AND SCALE + FADINGS
 function mobileScrollingAnimation() {
   windowY = window.pageYOffset;
-  downloadBtnContainer.style.display = "block";
   downloadBtnContainer.style =
     "display: flex; align-items: center; flex-direction: column";
   socialDiv.style.marginTop = vidBackground.offsetHeight + 700 + "px";
   uniqueValuePropositionDiv.style.opacity = 0;
-  downloadBtnContainer.style.marginTop = 50 + "px";
 
   if (windowY > -100 && windowY <= 250) {
     animationPropertySetMobile();
@@ -81,6 +79,7 @@ function mobileScrollingAnimation() {
     vidBackground.style.clipPath = "none";
     socialDiv.style.opacity = 0;
   }
+
   if (windowY > 250) {
     const opacity = 1 - (windowY - 300) / vidBackground.offsetHeight;
     if (opacity > 0) {
@@ -89,17 +88,17 @@ function mobileScrollingAnimation() {
     } else {
       uniqueValuePropositionDiv.style.display = "none";
     }
-    downloadBtnContainer.style.display = "none";
-
     vidBackground.style.clipPath = "inset(15px 5px)";
     vidBackground.style.transform = `scale(${230 / SCALING_RATIO}`;
-
     socialDiv.style.opacity = 1;
   }
 
-  if (1 - (windowY - 250) / vidBackground.offsetHeight <= 0)
-    uniqueValuePropositionDiv.display = "none";
-  else uniqueValuePropositionDiv.display = "block";
+  /*1 - (windowY - 250) / vidBackground.offsetHeight <= 0
+    ? (uniqueValuePropositionDiv.display = "none")
+    : (uniqueValuePropositionDiv.display = "block");*/
+  windowY >= 60
+    ? (downloadBtnContainer.style.display = "none")
+    : (downloadBtnContainer.style.display = "flex");
 }
 
 function animationPropertySetMobile() {
@@ -121,6 +120,7 @@ function computerScrollingAnimation() {
   rotationAngle = (windowY - 100) / ROTATION_RATIO;
   downloadBtnContainer.style.opacity = 1 - windowY / SCALING_RATIO;
   vidBackground.style.clipPath = "none";
+
   if (windowY >= -100 && windowY <= getPageYOffesetFromAngle(STOP_ANGLE)) {
     vidBackground.style.marginTop = `${windowY}px`;
     downloadContainerMarginTop(200);
@@ -169,10 +169,11 @@ function getPageYOffesetFromAngle(angle) {
 
 // SET THE PROPERTY FOR THE ANIMATION
 function animationPropertySet() {
-  if (rotationAngle >= 0) {
-    if (windowY / SCALING_RATIO > 1) rotateAndScale(vidBackground, true, true);
-    else rotateAndScale(vidBackground, true, false);
-  } else vidBackground.style.transform = "rotate(0deg) scale(1)";
+  if (rotationAngle >= 0)
+    windowY / SCALING_RATIO > 1
+      ? rotateAndScale(vidBackground, true, true)
+      : rotateAndScale(vidBackground, true, false);
+  else vidBackground.style.transform = "rotate(0deg) scale(1)";
 }
 
 // ROTATE AND SCALES THE ELEMENT
