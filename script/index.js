@@ -19,7 +19,7 @@ form.addEventListener("submit", (event) => {
   const formData = new FormData(form);
 
   const email = formData.get("email");
-  const agreement = formData.get("checkEmail") === "on" ? "true" : "false";
+  const agreement = formData.get("checkEmail") === "on" ? true : false;
   //const formData = new FormData(event.target);
 
   form.style = "display: none;";
@@ -30,6 +30,8 @@ form.addEventListener("submit", (event) => {
     email: email,
     agreement: agreement,
   };
+
+  gtag("event", "email_form_click");
 
   fetch(SUBSCRIBE_NEWSLETTER_ENDPOINT, {
     method: "POST",
@@ -46,6 +48,9 @@ form.addEventListener("submit", (event) => {
         icon.classList.remove("fa-circle-o-notch", "fa-spin");
         icon.classList.add("fa-check");
         h3.innerText = "Grazie per esserti iscritto all'accesso anticipato!";
+        gtag("event", "email_confirmed", {
+          commercial_consent: payload.agreement,
+        });
       }
       if (data.status === 422) {
         showError();
