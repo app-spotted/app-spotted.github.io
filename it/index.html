@@ -50,6 +50,9 @@
     ></script>
     <!-- Cookie script -->
     <script src="/script/coockie.js" defer></script>
+
+    <!-- Device OS detector -->
+     <script src="/script/deviceOsDetector.js"></script>
   </head>
   <body>
     <!-- Coockie banner -->
@@ -134,7 +137,7 @@
           </h2>
           <h2>Inserisci la tua mail per essere tra i primi.</h2>
           <form id="emailForm" method="POST">
-            <label>Email:</label>
+            <label for="email">Email:</label>
             <input
               type="email"
               name="email"
@@ -142,6 +145,12 @@
               placeholder="example@appspotted.com"
               required
             />
+            <label for="deviceOs">Dispositivo:</label>
+            <select id="deviceOs" name="deviceOs">
+              <option value="android">Android</option>
+              <option value="ios">iPhone</option>
+              <option value="other">Altro</option>
+            </select>
             <div class="checkBoxDiv">
               <input type="checkbox" id="checkEmail" name="checkEmail" />
               <lable for="checkEmailLbl"
