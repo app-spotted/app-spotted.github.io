@@ -19,6 +19,7 @@ form.addEventListener("submit", (event) => {
   const formData = new FormData(form);
 
   const email = formData.get("email");
+  const deviceOs = formData.get("deviceOs");
   const agreement = formData.get("checkEmail") === "on" ? true : false;
   //const formData = new FormData(event.target);
 
@@ -28,6 +29,7 @@ form.addEventListener("submit", (event) => {
   icon.classList.add("fa-circle-o-notch", "fa-spin");
   const payload = {
     email: email,
+    deviceOs: deviceOs,
     agreement: agreement,
   };
 

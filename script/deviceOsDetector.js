@@ -1,0 +1,18 @@
+// Getting device OS to preconfigure the form select menu
+document.addEventListener("DOMContentLoaded", function () {
+    const select = document.getElementById("deviceOs");
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    let deviceType = "other";
+
+    // Using RegEx to find 'android' or 'iphone' on the userAgent
+    if (/android/i.test(userAgent)) {
+    deviceType = "android";
+    } else if (/iPhone|iPad|iPod/i.test(userAgent)) {
+    deviceType = "ios";
+    }
+
+    // Setting select value accordingly
+    if (select) {
+    select.value = deviceType;
+    }
+});
